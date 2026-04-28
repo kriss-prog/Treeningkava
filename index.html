@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IronForge Gym — Training Plans</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="index.html">Iron<span>Forge</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Training</a></li>
+    <li><a href="food.html">Nutrition</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Build Your<br><span>Perfect Body</span></h1>
+    <p>Science-backed training plans for every level. Choose your path and start forging iron.</p>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main class="section">
+  <div class="section-title">Training Plans</div>
+
+  <!-- Level Toggle -->
+  <div class="level-toggle">
+    <button class="level-btn active" onclick="setLevel('beginner')">Beginner &nbsp;4×8</button>
+    <button class="level-btn" onclick="setLevel('experienced')">Experienced &nbsp;2×6</button>
+  </div>
+
+  <!-- Muscle Group Tabs -->
+  <div class="muscle-tabs">
+    <button class="muscle-tab active" onclick="setMuscle('chest')">Chest</button>
+    <button class="muscle-tab" onclick="setMuscle('back')">Back</button>
+    <button class="muscle-tab" onclick="setMuscle('shoulders')">Shoulders</button>
+    <button class="muscle-tab" onclick="setMuscle('arms')">Arms</button>
+    <button class="muscle-tab" onclick="setMuscle('legs')">Legs</button>
+  </div>
+
+  <!-- ───────── CHEST ───────── -->
+  <div class="muscle-panel active" id="panel-chest">
+
+    <!-- BEGINNER -->
+    <div class="level-panel active" id="chest-beginner">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <img class="exercise-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Bench_press_-_starting_position.jpg/320px-Bench_press_-_starting_position.jpg" alt="Bench Press" loading="lazy" />
+          <div class="exercise-body">
+            <div class="exercise-name">Barbell Bench Press</div>
+            <div class="exercise-targets">▸ Pectoralis Major · Anterior Deltoid · Triceps</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="12" r="8" stroke="#888" stroke-width="2"/><path d="M20 28h24M32 28v20M22 48l10-8 10 8" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Push-up position</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Push-ups</div>
+            <div class="exercise-targets">▸ Pectoralis Major · Triceps · Anterior Deltoid</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="32" cy="32" rx="20" ry="12" stroke="#888" stroke-width="2"/><line x1="12" y1="32" x2="52" y2="32" stroke="#888" stroke-width="2"/><circle cx="8" cy="32" r="4" stroke="#888" stroke-width="2"/><circle cx="56" cy="32" r="4" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Dumbbell Flyes</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Dumbbell Flyes</div>
+            <div class="exercise-targets">▸ Pectoralis Major (stretch) · Anterior Deltoid</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M25 20v12l-8 12M39 20v12l8 12M25 32h14" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Incline Press</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Incline Dumbbell Press</div>
+            <div class="exercise-targets">▸ Upper Pectoralis Major · Anterior Deltoid</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /chest beginner -->
+
+    <!-- EXPERIENCED -->
+    <div class="level-panel" id="chest-experienced">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <img class="exercise-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Bench_press_-_starting_position.jpg/320px-Bench_press_-_starting_position.jpg" alt="Heavy Bench Press" loading="lazy" />
+          <div class="exercise-body">
+            <div class="exercise-name">Heavy Barbell Bench Press</div>
+            <div class="exercise-targets">▸ Pectoralis Major · Triceps · Anterior Deltoid</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="4" width="16" height="6" rx="2" stroke="#888" stroke-width="2"/><path d="M20 10 L10 14 L10 38 L20 42 L44 42 L54 38 L54 14 L44 10 Z" stroke="#888" stroke-width="2"/><path d="M32 42v14" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Weighted Dips</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Weighted Dips</div>
+            <div class="exercise-targets">▸ Lower Pectoralis Major · Triceps · Anterior Deltoid</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="28" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="32" r="6" stroke="#888" stroke-width="2"/><circle cx="58" cy="32" r="6" stroke="#888" stroke-width="2"/><path d="M28 28 L32 16 L36 28" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Incline Barbell Press</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Incline Barbell Press</div>
+            <div class="exercise-targets">▸ Upper Pectoralis Major · Clavicular Head</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="32" r="6" stroke="#888" stroke-width="2"/><circle cx="52" cy="32" r="6" stroke="#888" stroke-width="2"/><path d="M18 32 Q32 16 46 32" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            <span style="font-size:0.75rem">Cable Crossovers</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Cable Crossovers</div>
+            <div class="exercise-targets">▸ Inner Pectoralis Major · Sternal Head</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /chest experienced -->
+  </div><!-- /panel-chest -->
+
+  <!-- ───────── BACK ───────── -->
+  <div class="muscle-panel" id="panel-back">
+
+    <div class="level-panel active" id="back-beginner">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="4" width="24" height="6" rx="2" stroke="#888" stroke-width="2"/><path d="M32 10v36" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M14 22l18 8 18-8" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M24 58h16" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Lat Pulldown</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Lat Pulldown</div>
+            <div class="exercise-targets">▸ Latissimus Dorsi · Biceps · Rear Deltoid</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="12" r="7" stroke="#888" stroke-width="2"/><path d="M25 22v10l-10 6M39 22v10l10 6" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M14 44h36" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Seated Cable Row</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Seated Cable Row</div>
+            <div class="exercise-targets">▸ Rhomboids · Latissimus Dorsi · Biceps</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M26 20l-12 6v20M38 20l12 6v20" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="10" y="44" width="44" height="6" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Dumbbell Row</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Dumbbell Row</div>
+            <div class="exercise-targets">▸ Latissimus Dorsi · Rhomboids · Biceps</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 20 Q32 10 54 20 L54 44 Q32 54 10 44 Z" stroke="#888" stroke-width="2" fill="none"/><path d="M10 32 Q32 24 54 32" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Back Extension</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Back Extension</div>
+            <div class="exercise-targets">▸ Erector Spinae · Glutes · Hamstrings</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="level-panel" id="back-experienced">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="44" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><path d="M20 44 L20 30" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M44 44 L44 30" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="22" r="8" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Deadlift</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Conventional Deadlift</div>
+            <div class="exercise-targets">▸ Posterior Chain · Erector Spinae · Glutes · Hamstrings</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="28" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="32" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="32" r="5" stroke="#888" stroke-width="2"/><path d="M20 28 L26 14 L38 14 L44 28" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Barbell Row</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Barbell Bent-over Row</div>
+            <div class="exercise-targets">▸ Latissimus Dorsi · Rhomboids · Rear Deltoid · Biceps</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="4" width="44" height="6" rx="3" stroke="#888" stroke-width="2"/><path d="M20 10v18" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M44 10v18" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="38" r="8" stroke="#888" stroke-width="2"/><path d="M32 46v10" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Pull-ups</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Weighted Pull-ups</div>
+            <div class="exercise-targets">▸ Latissimus Dorsi · Biceps · Rear Deltoid</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="28" y="4" width="8" height="56" rx="3" stroke="#888" stroke-width="2"/><circle cx="32" cy="28" r="12" stroke="#888" stroke-width="2"/><path d="M8 28h16M40 28h16" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">T-Bar Row</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">T-Bar Row</div>
+            <div class="exercise-targets">▸ Middle Back · Rhomboids · Traps · Lats</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /panel-back -->
+
+  <!-- ───────── SHOULDERS ───────── -->
+  <div class="muscle-panel" id="panel-shoulders">
+
+    <div class="level-panel active" id="shoulders-beginner">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="14" r="8" stroke="#888" stroke-width="2"/><path d="M24 24v10l-12 4M40 24v10l12 4" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="38" r="4" stroke="#888" stroke-width="2"/><circle cx="54" cy="38" r="4" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Dumbbell Press</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Dumbbell Shoulder Press</div>
+            <div class="exercise-targets">▸ All Deltoid Heads · Upper Trapezius · Triceps</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="14" r="8" stroke="#888" stroke-width="2"/><path d="M24 24v16M40 24v16" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M8 34 L24 40 M40 40 L56 34" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="33" r="4" stroke="#888" stroke-width="2"/><circle cx="58" cy="33" r="4" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Lateral Raises</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Lateral Raises</div>
+            <div class="exercise-targets">▸ Medial (Side) Deltoid · Supraspinatus</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="14" r="8" stroke="#888" stroke-width="2"/><path d="M24 24v16M40 24v16" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M16 24 L24 36 M40 36 L48 24" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="22" r="4" stroke="#888" stroke-width="2"/><circle cx="50" cy="22" r="4" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Front Raises</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Front Raises</div>
+            <div class="exercise-targets">▸ Anterior (Front) Deltoid · Pectoralis Major (clavicular)</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="14" r="8" stroke="#888" stroke-width="2"/><path d="M24 24v12M40 24v12" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M8 44 Q20 36 32 36 Q44 36 56 44" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            <span style="font-size:0.75rem">Face Pulls</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Face Pulls</div>
+            <div class="exercise-targets">▸ Posterior (Rear) Deltoid · Rotator Cuff · Traps</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="level-panel" id="shoulders-experienced">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="30" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="30" r="5" stroke="#888" stroke-width="2"/><circle cx="32" cy="14" r="8" stroke="#888" stroke-width="2"/><path d="M26 22l-6 4M38 22l6 4" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">OHP</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Barbell Overhead Press</div>
+            <div class="exercise-targets">▸ All Deltoid Heads · Triceps · Upper Trapezius · Core</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M25 18l-8 6v8l8 6M39 18l8 6v8l-8 6" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="32" r="4" stroke="#888" stroke-width="2"/><circle cx="50" cy="32" r="4" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Arnold Press</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Arnold Press</div>
+            <div class="exercise-targets">▸ All Three Deltoid Heads · Triceps</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="12" r="7" stroke="#888" stroke-width="2"/><path d="M25 20v16M39 20v16" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="4" y="34" width="20" height="6" rx="2" stroke="#888" stroke-width="2"/><rect x="40" y="34" width="20" height="6" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Heavy Laterals</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Heavy Lateral Raises</div>
+            <div class="exercise-targets">▸ Medial Deltoid · Supraspinatus</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="44" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="48" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="48" r="5" stroke="#888" stroke-width="2"/><path d="M20 44l-2-16 14-8 14 8-2 16" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:0.75rem">Upright Rows</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Upright Rows</div>
+            <div class="exercise-targets">▸ Medial Deltoid · Upper Trapezius · Biceps</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /panel-shoulders -->
+
+  <!-- ───────── ARMS ───────── -->
+  <div class="muscle-panel" id="panel-arms">
+
+    <div class="level-panel active" id="arms-beginner">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M25 20v8l-10 14" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M39 20v8l10 14" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="44" r="5" stroke="#888" stroke-width="2"/><circle cx="50" cy="44" r="5" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Dumbbell Curl</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Dumbbell Bicep Curl</div>
+            <div class="exercise-targets">▸ Biceps Brachii · Brachialis</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M25 20 L20 40" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M39 20 L44 40" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="12" y="38" width="16" height="8" rx="3" stroke="#888" stroke-width="2"/><rect x="36" y="38" width="16" height="8" rx="3" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Hammer Curls</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Hammer Curls</div>
+            <div class="exercise-targets">▸ Brachialis · Brachioradialis · Biceps Brachii</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="20" r="10" stroke="#888" stroke-width="2"/><path d="M26 20h20" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M46 20 Q60 20 56 36 L46 44" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="44" cy="46" r="5" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Tricep Pushdown</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Tricep Pushdowns</div>
+            <div class="exercise-targets">▸ Triceps Brachii (all three heads) · Lateral Head</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="28" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="32" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="32" r="5" stroke="#888" stroke-width="2"/><path d="M20 28 L26 14" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M44 28 L38 14" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="12" r="5" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Skull Crushers</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Skull Crushers</div>
+            <div class="exercise-targets">▸ Triceps Brachii (all heads) · Long Head emphasis</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="level-panel" id="arms-experienced">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="44" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="48" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="48" r="5" stroke="#888" stroke-width="2"/><path d="M20 44 Q24 28 32 24 Q40 28 44 44" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            <span style="font-size:0.75rem">Barbell Curl</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Barbell Bicep Curl</div>
+            <div class="exercise-targets">▸ Biceps Brachii · Brachialis · Forearms</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="36" width="26" height="10" rx="5" stroke="#888" stroke-width="2"/><path d="M30 41 Q42 41 50 30" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="52" cy="28" r="6" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Preacher Curl</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Preacher Curl</div>
+            <div class="exercise-targets">▸ Biceps Brachii (long head) · Brachialis</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="28" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="32" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="32" r="5" stroke="#888" stroke-width="2"/><rect x="22" y="18" width="20" height="10" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Close-Grip Bench</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Close-Grip Bench Press</div>
+            <div class="exercise-targets">▸ Triceps Brachii · Inner Chest · Anterior Deltoid</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M32 18v10l-12 18" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="50" r="6" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">OH Tricep Extension</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Overhead Tricep Extension</div>
+            <div class="exercise-targets">▸ Triceps Brachii (long head) · All Three Heads</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /panel-arms -->
+
+  <!-- ───────── LEGS ───────── -->
+  <div class="muscle-panel" id="panel-legs">
+
+    <div class="level-panel active" id="legs-beginner">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="56" height="14" rx="4" stroke="#888" stroke-width="2"/><path d="M18 24 L14 52" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M46 24 L50 52" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="10" y="50" width="14" height="6" rx="2" stroke="#888" stroke-width="2"/><rect x="40" y="50" width="14" height="6" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Leg Press</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Leg Press</div>
+            <div class="exercise-targets">▸ Quadriceps · Glutes · Hamstrings</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="4" width="32" height="8" rx="3" stroke="#888" stroke-width="2"/><path d="M24 12 L18 36" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M40 12 L46 36" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="12" y="34" width="16" height="8" rx="2" stroke="#888" stroke-width="2"/><rect x="36" y="34" width="16" height="8" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Leg Extension</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Leg Extension</div>
+            <div class="exercise-targets">▸ Quadriceps (all four heads) · Rectus Femoris</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="52" width="32" height="8" rx="3" stroke="#888" stroke-width="2"/><path d="M24 52 L18 28" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M40 52 L46 28" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="12" y="18" width="16" height="10" rx="2" stroke="#888" stroke-width="2"/><rect x="36" y="18" width="16" height="10" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Leg Curl</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Lying Leg Curl</div>
+            <div class="exercise-targets">▸ Hamstrings · Biceps Femoris · Gastrocnemius</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="4" width="28" height="40" rx="4" stroke="#888" stroke-width="2"/><path d="M20 44 L16 58M44 44 L48 58" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="24" r="8" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Calf Raises</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Standing Calf Raises</div>
+            <div class="exercise-targets">▸ Gastrocnemius · Soleus · Tibialis Posterior</div>
+            <span class="exercise-sets"><strong>4×8</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="level-panel" id="legs-experienced">
+      <div class="exercise-grid">
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="16" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="20" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="20" r="5" stroke="#888" stroke-width="2"/><path d="M22 24 L18 44 L32 50 L46 44 L42 24" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            <span style="font-size:0.75rem">Back Squat</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Barbell Back Squat</div>
+            <div class="exercise-targets">▸ Quadriceps · Glutes · Hamstrings · Core · Erector Spinae</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="12" width="56" height="8" rx="3" stroke="#888" stroke-width="2"/><circle cx="6" cy="16" r="5" stroke="#888" stroke-width="2"/><circle cx="58" cy="16" r="5" stroke="#888" stroke-width="2"/><path d="M20 20 L16 48" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M44 20 L48 48" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M16 48 Q32 56 48 48" stroke="#888" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            <span style="font-size:0.75rem">Romanian Deadlift</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Romanian Deadlift</div>
+            <div class="exercise-targets">▸ Hamstrings · Glutes · Erector Spinae</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 56 L6 18 L58 18 L58 56" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M6 56 L58 56" stroke="#888" stroke-width="2" stroke-linecap="round"/><path d="M20 18 L26 8 L38 8 L44 18" stroke="#888" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="36" r="8" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Hack Squat</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Hack Squat</div>
+            <div class="exercise-targets">▸ Quadriceps · Vastus Medialis · Glutes</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-img-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="10" r="7" stroke="#888" stroke-width="2"/><path d="M25 20 L16 44 M39 20 L36 38 L44 56" stroke="#888" stroke-width="2" stroke-linecap="round"/><rect x="40" y="40" width="18" height="6" rx="2" stroke="#888" stroke-width="2"/></svg>
+            <span style="font-size:0.75rem">Bulgarian Split Squat</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-name">Bulgarian Split Squat</div>
+            <div class="exercise-targets">▸ Quadriceps · Glutes · Hip Flexors · Balance</div>
+            <span class="exercise-sets"><strong>2×6</strong> reps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /panel-legs -->
+
+</main>
+
+<footer>
+  <p>IronForge &copy; 2026 — Train hard. Eat right. <span>Stay consistent.</span></p>
+</footer>
+
+<script>
+  let currentLevel  = 'beginner';
+  let currentMuscle = 'chest';
+
+  function setLevel(level) {
+    currentLevel = level;
+    document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    updatePanels();
+  }
+
+  function setMuscle(muscle) {
+    currentMuscle = muscle;
+    document.querySelectorAll('.muscle-tab').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.muscle-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + muscle).classList.add('active');
+    updatePanels();
+  }
+
+  function updatePanels() {
+    const panel = document.getElementById('panel-' + currentMuscle);
+    if (!panel) return;
+    panel.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+    const lp = document.getElementById(currentMuscle + '-' + currentLevel);
+    if (lp) lp.classList.add('active');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IronForge Gym — Nutrition Plan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .goal-toggle { margin-bottom: 2.5rem; }
+
+    .goal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .goal-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 0.3rem;
+    }
+
+    .goal-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+
+    .calorie-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      letter-spacing: 1px;
+    }
+
+    .tips-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .tips-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .tips-list li:last-child { border-bottom: none; }
+
+    .tips-list li::before {
+      content: '▸';
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+
+    .supplement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .supplement-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .supplement-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .supplement-why { font-size: 0.82rem; color: var(--muted); }
+
+    .supplement-dose {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: var(--orange);
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="index.html">Iron<span>Forge</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Training</a></li>
+    <li><a href="food.html" class="active">Nutrition</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero food-hero">
+  <div class="hero-content">
+    <h1>Fuel Your<br><span>Gains</span></h1>
+    <p>Precision nutrition plans for bulking, cutting, and maintaining. What you eat is half the battle.</p>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main class="section">
+
+  <!-- Goal Toggle -->
+  <div class="section-title">Choose Your Goal</div>
+  <div class="level-toggle goal-toggle">
+    <button class="level-btn active" onclick="setGoal('bulk')">Bulking</button>
+    <button class="level-btn" onclick="setGoal('cut')">Cutting</button>
+    <button class="level-btn" onclick="setGoal('maintain')">Maintenance</button>
+  </div>
+
+  <!-- ── BULK ── -->
+  <div class="level-panel active" id="goal-bulk">
+
+    <div class="goal-card">
+      <h3>Muscle Gain Plan</h3>
+      <p>High-calorie, high-protein diet designed to fuel intense training and maximize muscle growth. Calorie intake depends on bodyweight.</p>
+      <span class="calorie-badge">~2500 – 3400 kcal / day</span>
+    </div>
+
+    <div class="macro-bar">
+      <h3>Macro Breakdown</h3>
+      <div class="macro-row">
+        <span class="macro-label">Protein</span>
+        <div class="macro-track"><div class="macro-fill protein" style="width:35%"></div></div>
+        <span class="macro-pct">35%</span>
+      </div>
+      <div class="macro-row">
+        <span class="macro-label">Carbs</span>
+        <div class="macro-track"><div class="macro-fill carbs" style="width:45%"></div></div>
+        <span class="macro-pct">45%</span>
+      </div>
+      <div class="macro-row">
+        <span class="macro-label">Fats</span>
+        <div class="macro-track"><div class="macro-fill fat" style="width:20%"></div></div>
+        <span class="macro-pct">20%</span>
+      </div>
+    </div>
+
+    <div class="plan-grid">
+
+      <div class="plan-card">
+        <div class="plan-card-header">🌅 Breakfast</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Main</div>
+            <div class="meal-name">5 scrambled eggs + 2 slices whole-grain toast</div>
+            <div class="meal-macros">~540 kcal · 36g protein · 42g carbs · 22g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Side</div>
+            <div class="meal-name">1 cup oatmeal with banana and honey</div>
+            <div class="meal-macros">~380 kcal · 10g protein · 72g carbs · 6g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Drink</div>
+            <div class="meal-name">Whole milk (400 ml)</div>
+            <div class="meal-macros">~260 kcal · 13g protein · 20g carbs · 14g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🥗 Lunch</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Protein</div>
+            <div class="meal-name">200g chicken breast, grilled</div>
+            <div class="meal-macros">~330 kcal · 62g protein · 0g carbs · 7g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Carbs</div>
+            <div class="meal-name">200g white rice (cooked) + sweet potato</div>
+            <div class="meal-macros">~380 kcal · 8g protein · 84g carbs · 1g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Veggies</div>
+            <div class="meal-name">Broccoli &amp; mixed greens with olive oil</div>
+            <div class="meal-macros">~120 kcal · 4g protein · 10g carbs · 8g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🏋️ Pre-Workout Snack</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">45 min before</div>
+            <div class="meal-name">Rice cakes with peanut butter (2 tbsp)</div>
+            <div class="meal-macros">~290 kcal · 8g protein · 34g carbs · 16g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Optional</div>
+            <div class="meal-name">Banana + whey protein shake</div>
+            <div class="meal-macros">~280 kcal · 25g protein · 38g carbs · 3g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">💪 Post-Workout</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Within 30 min</div>
+            <div class="meal-name">Whey protein shake (40g) + dextrose</div>
+            <div class="meal-macros">~320 kcal · 42g protein · 40g carbs · 2g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Optional add</div>
+            <div class="meal-name">Greek yogurt with berries</div>
+            <div class="meal-macros">~180 kcal · 15g protein · 22g carbs · 3g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🍽️ Dinner</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Protein</div>
+            <div class="meal-name">200g salmon fillet, baked</div>
+            <div class="meal-macros">~412 kcal · 40g protein · 0g carbs · 28g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Carbs</div>
+            <div class="meal-name">2 medium potatoes, baked</div>
+            <div class="meal-macros">~280 kcal · 6g protein · 60g carbs · 0g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Veggies</div>
+            <div class="meal-name">Asparagus + cherry tomatoes</div>
+            <div class="meal-macros">~60 kcal · 3g protein · 10g carbs · 1g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🌙 Evening Snack</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Before bed</div>
+            <div class="meal-name">Cottage cheese (200g) with walnuts</div>
+            <div class="meal-macros">~380 kcal · 28g protein · 8g carbs · 26g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Alternative</div>
+            <div class="meal-name">Casein protein shake + almond butter</div>
+            <div class="meal-macros">~350 kcal · 32g protein · 14g carbs · 18g fat</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <ul class="tips-list">
+      <li>Aim for at least 2g of protein per kg of bodyweight daily.</li>
+      <li>Eat every 3–4 hours to keep protein synthesis elevated.</li>
+      <li>Prioritize carbs around your workout window for energy and recovery.</li>
+      <li>Track calories for at least the first 2 weeks to dial in your numbers.</li>
+      <li>Drink 3–4 liters of water per day — more on training days.</li>
+    </ul>
+  </div><!-- /bulk -->
+
+  <!-- ── CUT ── -->
+  <div class="level-panel" id="goal-cut">
+
+    <div class="goal-card">
+      <h3>Fat Loss Plan</h3>
+      <p>High-protein, moderate-carb diet with a caloric deficit. Preserves muscle while shedding fat.</p>
+      <span class="calorie-badge">~2000 – 2400 kcal / day</span>
+    </div>
+
+    <div class="macro-bar">
+      <h3>Macro Breakdown</h3>
+      <div class="macro-row">
+        <span class="macro-label">Protein</span>
+        <div class="macro-track"><div class="macro-fill protein" style="width:45%"></div></div>
+        <span class="macro-pct">45%</span>
+      </div>
+      <div class="macro-row">
+        <span class="macro-label">Carbs</span>
+        <div class="macro-track"><div class="macro-fill carbs" style="width:30%"></div></div>
+        <span class="macro-pct">30%</span>
+      </div>
+      <div class="macro-row">
+        <span class="macro-label">Fats</span>
+        <div class="macro-track"><div class="macro-fill fat" style="width:25%"></div></div>
+        <span class="macro-pct">25%</span>
+      </div>
+    </div>
+
+    <div class="plan-grid">
+
+      <div class="plan-card">
+        <div class="plan-card-header">🌅 Breakfast</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Main</div>
+            <div class="meal-name">4 egg whites + 1 whole egg, scrambled</div>
+            <div class="meal-macros">~200 kcal · 26g protein · 2g carbs · 9g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Side</div>
+            <div class="meal-name">½ cup oats with berries (no sugar)</div>
+            <div class="meal-macros">~180 kcal · 5g protein · 34g carbs · 3g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Drink</div>
+            <div class="meal-name">Black coffee or green tea</div>
+            <div class="meal-macros">~5 kcal · 0g protein · 0g carbs · 0g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🥗 Lunch</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Protein</div>
+            <div class="meal-name">180g grilled chicken breast</div>
+            <div class="meal-macros">~300 kcal · 56g protein · 0g carbs · 7g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Carbs</div>
+            <div class="meal-name">Large salad with quinoa (80g cooked)</div>
+            <div class="meal-macros">~180 kcal · 7g protein · 32g carbs · 3g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Dressing</div>
+            <div class="meal-name">Lemon juice + 1 tsp olive oil</div>
+            <div class="meal-macros">~45 kcal · 0g protein · 2g carbs · 4g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🏋️ Pre-Workout</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">1 hour before</div>
+            <div class="meal-name">Apple + 1 scoop whey protein (in water)</div>
+            <div class="meal-macros">~220 kcal · 25g protein · 26g carbs · 2g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Optional</div>
+            <div class="meal-name">Black coffee (thermogenic effect)</div>
+            <div class="meal-macros">~5 kcal · 0g protein · 0g carbs · 0g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">💪 Post-Workout</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Within 30 min</div>
+            <div class="meal-name">Whey isolate shake (35g) in water</div>
+            <div class="meal-macros">~140 kcal · 35g protein · 2g carbs · 1g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Optional</div>
+            <div class="meal-name">Low-fat Greek yogurt (150g)</div>
+            <div class="meal-macros">~110 kcal · 15g protein · 8g carbs · 1g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🍽️ Dinner</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Protein</div>
+            <div class="meal-name">150g lean beef (95%) or turkey mince</div>
+            <div class="meal-macros">~250 kcal · 38g protein · 0g carbs · 10g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Carbs</div>
+            <div class="meal-name">1 cup brown rice or sweet potato</div>
+            <div class="meal-macros">~200 kcal · 5g protein · 42g carbs · 1g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Veggies</div>
+            <div class="meal-name">Steamed broccoli + courgette</div>
+            <div class="meal-macros">~50 kcal · 3g protein · 8g carbs · 0g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🌙 Evening Snack</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Optional</div>
+            <div class="meal-name">Low-fat cottage cheese (150g)</div>
+            <div class="meal-macros">~130 kcal · 18g protein · 5g carbs · 4g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Alternative</div>
+            <div class="meal-name">Casein shake in water if still hungry</div>
+            <div class="meal-macros">~120 kcal · 24g protein · 5g carbs · 1g fat</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <ul class="tips-list">
+      <li>Maintain a 300–500 kcal deficit — anything larger risks muscle loss.</li>
+      <li>Protein stays HIGH even when cutting: 2.2–2.5g per kg bodyweight.</li>
+      <li>Cut carbs on rest days; keep them around your training sessions.</li>
+      <li>Do not skip post-workout nutrition — it's critical for muscle preservation.</li>
+      <li>Prioritize sleep: poor sleep elevates cortisol and increases fat storage.</li>
+    </ul>
+  </div><!-- /cut -->
+
+  <!-- ── MAINTAIN ── -->
+  <div class="level-panel" id="goal-maintain">
+
+    <div class="goal-card">
+      <h3>Maintenance Plan</h3>
+      <p>Balanced macros to support performance, recovery, and body composition without significant changes in weight.</p>
+      <span class="calorie-badge">~2500 – 2900 kcal / day</span>
+    </div>
+
+    <div class="macro-bar">
+      <h3>Macro Breakdown</h3>
+      <div class="macro-row">
+        <span class="macro-label">Protein</span>
+        <div class="macro-track"><div class="macro-fill protein" style="width:30%"></div></div>
+        <span class="macro-pct">30%</span>
+      </div>
+      <div class="macro-row">
+        <span class="macro-label">Carbs</span>
+        <div class="macro-track"><div class="macro-fill carbs" style="width:45%"></div></div>
+        <span class="macro-pct">45%</span>
+      </div>
+      <div class="macro-row">
+        <span class="macro-label">Fats</span>
+        <div class="macro-track"><div class="macro-fill fat" style="width:25%"></div></div>
+        <span class="macro-pct">25%</span>
+      </div>
+    </div>
+
+    <div class="plan-grid">
+
+      <div class="plan-card">
+        <div class="plan-card-header">🌅 Breakfast</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Main</div>
+            <div class="meal-name">3 eggs + avocado toast on sourdough</div>
+            <div class="meal-macros">~480 kcal · 22g protein · 44g carbs · 24g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Optional</div>
+            <div class="meal-name">Greek yogurt (150g) + granola</div>
+            <div class="meal-macros">~240 kcal · 14g protein · 28g carbs · 7g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🥗 Lunch</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Protein</div>
+            <div class="meal-name">150g tuna or grilled chicken</div>
+            <div class="meal-macros">~250 kcal · 45g protein · 0g carbs · 7g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Carbs</div>
+            <div class="meal-name">Pasta (100g dry) with tomato sauce</div>
+            <div class="meal-macros">~380 kcal · 13g protein · 74g carbs · 3g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Veggies</div>
+            <div class="meal-name">Side salad with olive oil dressing</div>
+            <div class="meal-macros">~90 kcal · 2g protein · 8g carbs · 6g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🏋️ Pre-Workout</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">1 hour before</div>
+            <div class="meal-name">Banana + peanut butter (1.5 tbsp)</div>
+            <div class="meal-macros">~260 kcal · 8g protein · 34g carbs · 12g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">💪 Post-Workout</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Within 30 min</div>
+            <div class="meal-name">Whey protein shake (30g) + fruit</div>
+            <div class="meal-macros">~260 kcal · 30g protein · 30g carbs · 3g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🍽️ Dinner</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Protein</div>
+            <div class="meal-name">200g cod fillet or chicken thighs</div>
+            <div class="meal-macros">~340 kcal · 42g protein · 0g carbs · 18g fat</div>
+          </div>
+          <div class="meal">
+            <div class="meal-label">Carbs</div>
+            <div class="meal-name">Baked potato + mixed vegetables</div>
+            <div class="meal-macros">~250 kcal · 6g protein · 52g carbs · 1g fat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card-header">🌙 Evening Snack</div>
+        <div class="plan-card-body">
+          <div class="meal">
+            <div class="meal-label">Optional</div>
+            <div class="meal-name">Handful of nuts + dark chocolate (2 squares)</div>
+            <div class="meal-macros">~220 kcal · 6g protein · 12g carbs · 18g fat</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <ul class="tips-list">
+      <li>Weigh yourself weekly — adjust calories if weight drifts more than 0.5kg/week.</li>
+      <li>Focus on food quality, not just quantity: whole foods, minimal processing.</li>
+      <li>Eat mostly around training — skip big carb meals on rest days if you prefer.</li>
+      <li>Omega-3s from fatty fish or supplements support joint health and recovery.</li>
+    </ul>
+  </div><!-- /maintain -->
+
+  <hr class="divider" />
+
+  <!-- ── SUPPLEMENTS ── -->
+  <div class="section-title">Key Supplements</div>
+  <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.9rem;">Food first — these fill gaps, not replace meals.</p>
+  <div class="supplement-grid">
+    <div class="supplement-card">
+      <div class="supplement-name">Whey Protein</div>
+      <div class="supplement-why">Fast-absorbing post-workout protein to hit daily targets easily.</div>
+      <div class="supplement-dose">25–40g post-workout</div>
+    </div>
+    <div class="supplement-card">
+      <div class="supplement-name">Creatine Monohydrate</div>
+      <div class="supplement-why">Most research-backed supplement for strength and lean mass gains.</div>
+      <div class="supplement-dose">3–5g daily</div>
+    </div>
+    <div class="supplement-card">
+      <div class="supplement-name">Vitamin D3 + K2</div>
+      <div class="supplement-why">Critical for testosterone production, bone density, and immunity.</div>
+      <div class="supplement-dose">2000–4000 IU / day</div>
+    </div>
+    <div class="supplement-card">
+      <div class="supplement-name">Omega-3 Fish Oil</div>
+      <div class="supplement-why">Reduces inflammation, supports joint health and cardiovascular function.</div>
+      <div class="supplement-dose">2–3g EPA+DHA daily</div>
+    </div>
+    <div class="supplement-card">
+      <div class="supplement-name">Magnesium Glycinate</div>
+      <div class="supplement-why">Improves sleep quality and muscle recovery. Many athletes are deficient.</div>
+      <div class="supplement-dose">200–400mg before bed</div>
+    </div>
+    <div class="supplement-card">
+      <div class="supplement-name">Caffeine</div>
+      <div class="supplement-why">Proven ergogenic aid — improves strength, endurance, and focus.</div>
+      <div class="supplement-dose">150–300mg pre-workout</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>IronForge &copy; 2026 — Train hard. Eat right. <span>Stay consistent.</span></p>
+</footer>
+
+<script>
+  function setGoal(goal) {
+    document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('goal-' + goal).classList.add('active');
+  }
+</script>
+</body>
+</html>
