@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IronForge Gym — Nutrition Plan</title>
+  <title>IronForge — Toitumiskava</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .goal-toggle { margin-bottom: 2.5rem; }
@@ -76,6 +76,12 @@
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .supplement-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-3px);
     }
 
     .supplement-name {
@@ -93,6 +99,12 @@
       font-family: 'Oswald', sans-serif;
       letter-spacing: 0.5px;
     }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
   </style>
 </head>
 <body>
@@ -101,53 +113,58 @@
 <nav>
   <a class="nav-logo" href="index.html">Iron<span>Forge</span></a>
   <ul class="nav-links">
-    <li><a href="index.html">Training</a></li>
-    <li><a href="food.html" class="active">Nutrition</a></li>
+    <li><a href="index.html">Treening</a></li>
+    <li><a href="food.html" class="active">Toitumine</a></li>
   </ul>
 </nav>
 
 <!-- ── HERO ── -->
 <div class="hero food-hero">
   <div class="hero-content">
-    <h1>Fuel Your<br><span>Gains</span></h1>
-    <p>Precision nutrition plans for bulking, cutting, and maintaining. What you eat is half the battle.</p>
+    <h1>Toida Oma<br><span>Kasvu</span></h1>
+    <p>Täpsed toitumiskavad massi kasvatamiseks, kuivatamiseks ja hoidmiseks. See, mida sööd, on pool võitu.</p>
+    <div class="hero-btns">
+      <a href="#eesmärk" class="btn-primary">Vali Eesmärk</a>
+      <a href="index.html" class="btn-outline">Vaata Treeningut</a>
+    </div>
   </div>
 </div>
 
 <!-- ── MAIN ── -->
-<main class="section">
+<main class="section" id="eesmärk">
 
   <!-- Goal Toggle -->
-  <div class="section-title">Choose Your Goal</div>
+  <div class="section-title">Vali Oma Eesmärk</div>
+  <p class="section-sub">Iga eesmärk vajab erinevat toitumisstrateegiat</p>
   <div class="level-toggle goal-toggle">
     <button class="level-btn active" onclick="setGoal('bulk')">Bulking</button>
     <button class="level-btn" onclick="setGoal('cut')">Cutting</button>
     <button class="level-btn" onclick="setGoal('maintain')">Maintenance</button>
   </div>
 
-  <!-- ── BULK ── -->
+  <!-- ── MASSI KASVATAMINE ── -->
   <div class="level-panel active" id="goal-bulk">
 
     <div class="goal-card">
-      <h3>Muscle Gain Plan</h3>
-      <p>High-calorie, high-protein diet designed to fuel intense training and maximize muscle growth. Calorie intake depends on bodyweight.</p>
-      <span class="calorie-badge">~2500 – 3400 kcal / day</span>
+      <h3>Lihaste Kasvatamise Kava</h3>
+      <p>Kõrge kalorisisaldusega, valgurikas toitumine, mis toetab intensiivset treeningut ja maksimeerib lihaskasvu. Kalorite tarbimine sõltub kehakaalust.</p>
+      <span class="calorie-badge">~2500 – 3400 kcal / päev</span>
     </div>
 
     <div class="macro-bar">
-      <h3>Macro Breakdown</h3>
+      <h3>Makrotoitainete Jaotus</h3>
       <div class="macro-row">
-        <span class="macro-label">Protein</span>
+        <span class="macro-label">Valk</span>
         <div class="macro-track"><div class="macro-fill protein" style="width:35%"></div></div>
         <span class="macro-pct">35%</span>
       </div>
       <div class="macro-row">
-        <span class="macro-label">Carbs</span>
+        <span class="macro-label">Süsivesikud</span>
         <div class="macro-track"><div class="macro-fill carbs" style="width:45%"></div></div>
         <span class="macro-pct">45%</span>
       </div>
       <div class="macro-row">
-        <span class="macro-label">Fats</span>
+        <span class="macro-label">Rasvad</span>
         <div class="macro-track"><div class="macro-fill fat" style="width:20%"></div></div>
         <span class="macro-pct">20%</span>
       </div>
@@ -156,112 +173,112 @@
     <div class="plan-grid">
 
       <div class="plan-card">
-        <div class="plan-card-header">🌅 Breakfast</div>
+        <div class="plan-card-header">🌅 Hommikusöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Main</div>
-            <div class="meal-name">5 scrambled eggs + 2 slices whole-grain toast</div>
-            <div class="meal-macros">~540 kcal · 36g protein · 42g carbs · 22g fat</div>
+            <div class="meal-label">Pearoog</div>
+            <div class="meal-name">5 röstitud muna + 2 viilu täisteraleiba</div>
+            <div class="meal-macros">~540 kcal · 36g valku · 42g süsivesikuid · 22g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Side</div>
-            <div class="meal-name">1 cup oatmeal with banana and honey</div>
-            <div class="meal-macros">~380 kcal · 10g protein · 72g carbs · 6g fat</div>
+            <div class="meal-label">Lisand</div>
+            <div class="meal-name">1 tass kaerahelbeid banaani ja meega</div>
+            <div class="meal-macros">~380 kcal · 10g valku · 72g süsivesikuid · 6g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Drink</div>
-            <div class="meal-name">Whole milk (400 ml)</div>
-            <div class="meal-macros">~260 kcal · 13g protein · 20g carbs · 14g fat</div>
+            <div class="meal-label">Jook</div>
+            <div class="meal-name">Täispiim (400 ml)</div>
+            <div class="meal-macros">~260 kcal · 13g valku · 20g süsivesikuid · 14g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🥗 Lunch</div>
+        <div class="plan-card-header">🥗 Lõunasöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Protein</div>
-            <div class="meal-name">200g chicken breast, grilled</div>
-            <div class="meal-macros">~330 kcal · 62g protein · 0g carbs · 7g fat</div>
+            <div class="meal-label">Valk</div>
+            <div class="meal-name">200g grillitud kanarinnatükk</div>
+            <div class="meal-macros">~330 kcal · 62g valku · 0g süsivesikuid · 7g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Carbs</div>
-            <div class="meal-name">200g white rice (cooked) + sweet potato</div>
-            <div class="meal-macros">~380 kcal · 8g protein · 84g carbs · 1g fat</div>
+            <div class="meal-label">Süsivesikud</div>
+            <div class="meal-name">200g valget riisi (keedetud) + bataat</div>
+            <div class="meal-macros">~380 kcal · 8g valku · 84g süsivesikuid · 1g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Veggies</div>
-            <div class="meal-name">Broccoli &amp; mixed greens with olive oil</div>
-            <div class="meal-macros">~120 kcal · 4g protein · 10g carbs · 8g fat</div>
+            <div class="meal-label">Köögiviljad</div>
+            <div class="meal-name">Brokoli &amp; segasalat oliiviõliga</div>
+            <div class="meal-macros">~120 kcal · 4g valku · 10g süsivesikuid · 8g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🏋️ Pre-Workout Snack</div>
+        <div class="plan-card-header">🏋️ Enne Treeningut</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">45 min before</div>
-            <div class="meal-name">Rice cakes with peanut butter (2 tbsp)</div>
-            <div class="meal-macros">~290 kcal · 8g protein · 34g carbs · 16g fat</div>
+            <div class="meal-label">45 min enne</div>
+            <div class="meal-name">Riisileivad maapähklivõiga (2 sl)</div>
+            <div class="meal-macros">~290 kcal · 8g valku · 34g süsivesikuid · 16g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Optional</div>
-            <div class="meal-name">Banana + whey protein shake</div>
-            <div class="meal-macros">~280 kcal · 25g protein · 38g carbs · 3g fat</div>
+            <div class="meal-label">Valikuline</div>
+            <div class="meal-name">Banaan + vadakuvalgu shake</div>
+            <div class="meal-macros">~280 kcal · 25g valku · 38g süsivesikuid · 3g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">💪 Post-Workout</div>
+        <div class="plan-card-header">💪 Pärast Treeningut</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Within 30 min</div>
-            <div class="meal-name">Whey protein shake (40g) + dextrose</div>
-            <div class="meal-macros">~320 kcal · 42g protein · 40g carbs · 2g fat</div>
+            <div class="meal-label">30 min jooksul</div>
+            <div class="meal-name">Vadakuvalk (40g) + dekstroos</div>
+            <div class="meal-macros">~320 kcal · 42g valku · 40g süsivesikuid · 2g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Optional add</div>
-            <div class="meal-name">Greek yogurt with berries</div>
-            <div class="meal-macros">~180 kcal · 15g protein · 22g carbs · 3g fat</div>
+            <div class="meal-label">Valikuline lisand</div>
+            <div class="meal-name">Kreeka jogurt marjadega</div>
+            <div class="meal-macros">~180 kcal · 15g valku · 22g süsivesikuid · 3g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🍽️ Dinner</div>
+        <div class="plan-card-header">🍽️ Õhtusöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Protein</div>
-            <div class="meal-name">200g salmon fillet, baked</div>
-            <div class="meal-macros">~412 kcal · 40g protein · 0g carbs · 28g fat</div>
+            <div class="meal-label">Valk</div>
+            <div class="meal-name">200g ahjus küpsetatud lõhefilee</div>
+            <div class="meal-macros">~412 kcal · 40g valku · 0g süsivesikuid · 28g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Carbs</div>
-            <div class="meal-name">2 medium potatoes, baked</div>
-            <div class="meal-macros">~280 kcal · 6g protein · 60g carbs · 0g fat</div>
+            <div class="meal-label">Süsivesikud</div>
+            <div class="meal-name">2 keskmist küpsetatud kartulit</div>
+            <div class="meal-macros">~280 kcal · 6g valku · 60g süsivesikuid · 0g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Veggies</div>
-            <div class="meal-name">Asparagus + cherry tomatoes</div>
-            <div class="meal-macros">~60 kcal · 3g protein · 10g carbs · 1g fat</div>
+            <div class="meal-label">Köögiviljad</div>
+            <div class="meal-name">Spargel + kirsstomatid</div>
+            <div class="meal-macros">~60 kcal · 3g valku · 10g süsivesikuid · 1g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🌙 Evening Snack</div>
+        <div class="plan-card-header">🌙 Õhtune Suupiste</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Before bed</div>
-            <div class="meal-name">Cottage cheese (200g) with walnuts</div>
-            <div class="meal-macros">~380 kcal · 28g protein · 8g carbs · 26g fat</div>
+            <div class="meal-label">Enne magamaminekut</div>
+            <div class="meal-name">Kodujuust (200g) kreeka pähklitega</div>
+            <div class="meal-macros">~380 kcal · 28g valku · 8g süsivesikuid · 26g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Alternative</div>
-            <div class="meal-name">Casein protein shake + almond butter</div>
-            <div class="meal-macros">~350 kcal · 32g protein · 14g carbs · 18g fat</div>
+            <div class="meal-label">Alternatiiv</div>
+            <div class="meal-name">Kaseiini proteiinijook + mandlivõi</div>
+            <div class="meal-macros">~350 kcal · 32g valku · 14g süsivesikuid · 18g rasva</div>
           </div>
         </div>
       </div>
@@ -269,37 +286,37 @@
     </div>
 
     <ul class="tips-list">
-      <li>Aim for at least 2g of protein per kg of bodyweight daily.</li>
-      <li>Eat every 3–4 hours to keep protein synthesis elevated.</li>
-      <li>Prioritize carbs around your workout window for energy and recovery.</li>
-      <li>Track calories for at least the first 2 weeks to dial in your numbers.</li>
-      <li>Drink 3–4 liters of water per day — more on training days.</li>
+      <li>Sihtige päevas vähemalt 2g valku kehakaalu kilogrammi kohta.</li>
+      <li>Sööge iga 3–4 tunni järel, et hoida valgu süntees kõrgel.</li>
+      <li>Eelistage süsivesikuid ümber treeningakna energia ja taastumise jaoks.</li>
+      <li>Jälgige kaloreid vähemalt esimese 2 nädala jooksul, et oma numbrid selgeks saada.</li>
+      <li>Jooge 3–4 liitrit vett päevas — treeningutel rohkem.</li>
     </ul>
   </div><!-- /bulk -->
 
-  <!-- ── CUT ── -->
+  <!-- ── KUIVATAMINE ── -->
   <div class="level-panel" id="goal-cut">
 
     <div class="goal-card">
-      <h3>Fat Loss Plan</h3>
-      <p>High-protein, moderate-carb diet with a caloric deficit. Preserves muscle while shedding fat.</p>
-      <span class="calorie-badge">~2000 – 2400 kcal / day</span>
+      <h3>Rasvakaotuse Kava</h3>
+      <p>Valgurikas, mõõduka süsivesikute sisaldusega toitumine kalorite defitsiidiga. Säilitab lihaseid, vähendades samal ajal rasva.</p>
+      <span class="calorie-badge">~2000 – 2400 kcal / päev</span>
     </div>
 
     <div class="macro-bar">
-      <h3>Macro Breakdown</h3>
+      <h3>Makrotoitainete Jaotus</h3>
       <div class="macro-row">
-        <span class="macro-label">Protein</span>
+        <span class="macro-label">Valk</span>
         <div class="macro-track"><div class="macro-fill protein" style="width:45%"></div></div>
         <span class="macro-pct">45%</span>
       </div>
       <div class="macro-row">
-        <span class="macro-label">Carbs</span>
+        <span class="macro-label">Süsivesikud</span>
         <div class="macro-track"><div class="macro-fill carbs" style="width:30%"></div></div>
         <span class="macro-pct">30%</span>
       </div>
       <div class="macro-row">
-        <span class="macro-label">Fats</span>
+        <span class="macro-label">Rasvad</span>
         <div class="macro-track"><div class="macro-fill fat" style="width:25%"></div></div>
         <span class="macro-pct">25%</span>
       </div>
@@ -308,112 +325,112 @@
     <div class="plan-grid">
 
       <div class="plan-card">
-        <div class="plan-card-header">🌅 Breakfast</div>
+        <div class="plan-card-header">🌅 Hommikusöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Main</div>
-            <div class="meal-name">4 egg whites + 1 whole egg, scrambled</div>
-            <div class="meal-macros">~200 kcal · 26g protein · 2g carbs · 9g fat</div>
+            <div class="meal-label">Pearoog</div>
+            <div class="meal-name">4 munavalget + 1 terve muna, röstitult</div>
+            <div class="meal-macros">~200 kcal · 26g valku · 2g süsivesikuid · 9g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Side</div>
-            <div class="meal-name">½ cup oats with berries (no sugar)</div>
-            <div class="meal-macros">~180 kcal · 5g protein · 34g carbs · 3g fat</div>
+            <div class="meal-label">Lisand</div>
+            <div class="meal-name">½ tassi kaera marjadega (ilma suhkruta)</div>
+            <div class="meal-macros">~180 kcal · 5g valku · 34g süsivesikuid · 3g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Drink</div>
-            <div class="meal-name">Black coffee or green tea</div>
-            <div class="meal-macros">~5 kcal · 0g protein · 0g carbs · 0g fat</div>
+            <div class="meal-label">Jook</div>
+            <div class="meal-name">Must kohv või roheline tee</div>
+            <div class="meal-macros">~5 kcal · 0g valku · 0g süsivesikuid · 0g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🥗 Lunch</div>
+        <div class="plan-card-header">🥗 Lõunasöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Protein</div>
-            <div class="meal-name">180g grilled chicken breast</div>
-            <div class="meal-macros">~300 kcal · 56g protein · 0g carbs · 7g fat</div>
+            <div class="meal-label">Valk</div>
+            <div class="meal-name">180g grillitud kanarinnatükk</div>
+            <div class="meal-macros">~300 kcal · 56g valku · 0g süsivesikuid · 7g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Carbs</div>
-            <div class="meal-name">Large salad with quinoa (80g cooked)</div>
-            <div class="meal-macros">~180 kcal · 7g protein · 32g carbs · 3g fat</div>
+            <div class="meal-label">Süsivesikud</div>
+            <div class="meal-name">Suur salat kvinoaga (80g keedetud)</div>
+            <div class="meal-macros">~180 kcal · 7g valku · 32g süsivesikuid · 3g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Dressing</div>
-            <div class="meal-name">Lemon juice + 1 tsp olive oil</div>
-            <div class="meal-macros">~45 kcal · 0g protein · 2g carbs · 4g fat</div>
+            <div class="meal-label">Kaste</div>
+            <div class="meal-name">Sidrunimahl + 1 tl oliiviõli</div>
+            <div class="meal-macros">~45 kcal · 0g valku · 2g süsivesikuid · 4g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🏋️ Pre-Workout</div>
+        <div class="plan-card-header">🏋️ Enne Treeningut</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">1 hour before</div>
-            <div class="meal-name">Apple + 1 scoop whey protein (in water)</div>
-            <div class="meal-macros">~220 kcal · 25g protein · 26g carbs · 2g fat</div>
+            <div class="meal-label">1 tund enne</div>
+            <div class="meal-name">Õun + 1 mõõtlusikatäis vadakuvalku (vees)</div>
+            <div class="meal-macros">~220 kcal · 25g valku · 26g süsivesikuid · 2g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Optional</div>
-            <div class="meal-name">Black coffee (thermogenic effect)</div>
-            <div class="meal-macros">~5 kcal · 0g protein · 0g carbs · 0g fat</div>
+            <div class="meal-label">Valikuline</div>
+            <div class="meal-name">Must kohv (termogeenne mõju)</div>
+            <div class="meal-macros">~5 kcal · 0g valku · 0g süsivesikuid · 0g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">💪 Post-Workout</div>
+        <div class="plan-card-header">💪 Pärast Treeningut</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Within 30 min</div>
-            <div class="meal-name">Whey isolate shake (35g) in water</div>
-            <div class="meal-macros">~140 kcal · 35g protein · 2g carbs · 1g fat</div>
+            <div class="meal-label">30 min jooksul</div>
+            <div class="meal-name">Vadakuisolaadi shake (35g) vees</div>
+            <div class="meal-macros">~140 kcal · 35g valku · 2g süsivesikuid · 1g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Optional</div>
-            <div class="meal-name">Low-fat Greek yogurt (150g)</div>
-            <div class="meal-macros">~110 kcal · 15g protein · 8g carbs · 1g fat</div>
+            <div class="meal-label">Valikuline</div>
+            <div class="meal-name">Madala rasvasisaldusega Kreeka jogurt (150g)</div>
+            <div class="meal-macros">~110 kcal · 15g valku · 8g süsivesikuid · 1g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🍽️ Dinner</div>
+        <div class="plan-card-header">🍽️ Õhtusöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Protein</div>
-            <div class="meal-name">150g lean beef (95%) or turkey mince</div>
-            <div class="meal-macros">~250 kcal · 38g protein · 0g carbs · 10g fat</div>
+            <div class="meal-label">Valk</div>
+            <div class="meal-name">150g lahja veiseliha (95%) või kalkunihakkliha</div>
+            <div class="meal-macros">~250 kcal · 38g valku · 0g süsivesikuid · 10g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Carbs</div>
-            <div class="meal-name">1 cup brown rice or sweet potato</div>
-            <div class="meal-macros">~200 kcal · 5g protein · 42g carbs · 1g fat</div>
+            <div class="meal-label">Süsivesikud</div>
+            <div class="meal-name">1 tass pruuni riisi või bataati</div>
+            <div class="meal-macros">~200 kcal · 5g valku · 42g süsivesikuid · 1g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Veggies</div>
-            <div class="meal-name">Steamed broccoli + courgette</div>
-            <div class="meal-macros">~50 kcal · 3g protein · 8g carbs · 0g fat</div>
+            <div class="meal-label">Köögiviljad</div>
+            <div class="meal-name">Aurutatud brokoli + suvikõrvits</div>
+            <div class="meal-macros">~50 kcal · 3g valku · 8g süsivesikuid · 0g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🌙 Evening Snack</div>
+        <div class="plan-card-header">🌙 Õhtune Suupiste</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Optional</div>
-            <div class="meal-name">Low-fat cottage cheese (150g)</div>
-            <div class="meal-macros">~130 kcal · 18g protein · 5g carbs · 4g fat</div>
+            <div class="meal-label">Valikuline</div>
+            <div class="meal-name">Madala rasvasisaldusega kodujuust (150g)</div>
+            <div class="meal-macros">~130 kcal · 18g valku · 5g süsivesikuid · 4g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Alternative</div>
-            <div class="meal-name">Casein shake in water if still hungry</div>
-            <div class="meal-macros">~120 kcal · 24g protein · 5g carbs · 1g fat</div>
+            <div class="meal-label">Alternatiiv</div>
+            <div class="meal-name">Kaseiini shake vees, kui oled veel näljane</div>
+            <div class="meal-macros">~120 kcal · 24g valku · 5g süsivesikuid · 1g rasva</div>
           </div>
         </div>
       </div>
@@ -421,37 +438,37 @@
     </div>
 
     <ul class="tips-list">
-      <li>Maintain a 300–500 kcal deficit — anything larger risks muscle loss.</li>
-      <li>Protein stays HIGH even when cutting: 2.2–2.5g per kg bodyweight.</li>
-      <li>Cut carbs on rest days; keep them around your training sessions.</li>
-      <li>Do not skip post-workout nutrition — it's critical for muscle preservation.</li>
-      <li>Prioritize sleep: poor sleep elevates cortisol and increases fat storage.</li>
+      <li>Hoidke 300–500 kcal defitsiiti — suurem defitsiit ohustab lihaseid.</li>
+      <li>Valk jääb kõrgeks ka kuivatamisel: 2,2–2,5g kehakaalu kilogrammi kohta.</li>
+      <li>Vähendage süsivesikuid puhkepäevadel; hoidke need treeningpäevade ümber.</li>
+      <li>Ärge jätke treeningujärgset toitumist vahele — see on lihaste säilitamisel ülioluline.</li>
+      <li>Seadke uni prioriteediks: halb uni tõstab kortisooli ja suurendab rasvavarusid.</li>
     </ul>
   </div><!-- /cut -->
 
-  <!-- ── MAINTAIN ── -->
+  <!-- ── HOIDMINE ── -->
   <div class="level-panel" id="goal-maintain">
 
     <div class="goal-card">
-      <h3>Maintenance Plan</h3>
-      <p>Balanced macros to support performance, recovery, and body composition without significant changes in weight.</p>
-      <span class="calorie-badge">~2500 – 2900 kcal / day</span>
+      <h3>Hoidmiskava</h3>
+      <p>Tasakaalustatud makrotoitained toetamaks sooritust, taastumist ja kehakompositsiooni ilma oluliste kaalumuutusteta.</p>
+      <span class="calorie-badge">~2500 – 2900 kcal / päev</span>
     </div>
 
     <div class="macro-bar">
-      <h3>Macro Breakdown</h3>
+      <h3>Makrotoitainete Jaotus</h3>
       <div class="macro-row">
-        <span class="macro-label">Protein</span>
+        <span class="macro-label">Valk</span>
         <div class="macro-track"><div class="macro-fill protein" style="width:30%"></div></div>
         <span class="macro-pct">30%</span>
       </div>
       <div class="macro-row">
-        <span class="macro-label">Carbs</span>
+        <span class="macro-label">Süsivesikud</span>
         <div class="macro-track"><div class="macro-fill carbs" style="width:45%"></div></div>
         <span class="macro-pct">45%</span>
       </div>
       <div class="macro-row">
-        <span class="macro-label">Fats</span>
+        <span class="macro-label">Rasvad</span>
         <div class="macro-track"><div class="macro-fill fat" style="width:25%"></div></div>
         <span class="macro-pct">25%</span>
       </div>
@@ -460,87 +477,87 @@
     <div class="plan-grid">
 
       <div class="plan-card">
-        <div class="plan-card-header">🌅 Breakfast</div>
+        <div class="plan-card-header">🌅 Hommikusöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Main</div>
-            <div class="meal-name">3 eggs + avocado toast on sourdough</div>
-            <div class="meal-macros">~480 kcal · 22g protein · 44g carbs · 24g fat</div>
+            <div class="meal-label">Pearoog</div>
+            <div class="meal-name">3 muna + avokaadovõileib hapuleival</div>
+            <div class="meal-macros">~480 kcal · 22g valku · 44g süsivesikuid · 24g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Optional</div>
-            <div class="meal-name">Greek yogurt (150g) + granola</div>
-            <div class="meal-macros">~240 kcal · 14g protein · 28g carbs · 7g fat</div>
+            <div class="meal-label">Valikuline</div>
+            <div class="meal-name">Kreeka jogurt (150g) + granola</div>
+            <div class="meal-macros">~240 kcal · 14g valku · 28g süsivesikuid · 7g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🥗 Lunch</div>
+        <div class="plan-card-header">🥗 Lõunasöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Protein</div>
-            <div class="meal-name">150g tuna or grilled chicken</div>
-            <div class="meal-macros">~250 kcal · 45g protein · 0g carbs · 7g fat</div>
+            <div class="meal-label">Valk</div>
+            <div class="meal-name">150g tuunikala või grillitud kana</div>
+            <div class="meal-macros">~250 kcal · 45g valku · 0g süsivesikuid · 7g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Carbs</div>
-            <div class="meal-name">Pasta (100g dry) with tomato sauce</div>
-            <div class="meal-macros">~380 kcal · 13g protein · 74g carbs · 3g fat</div>
+            <div class="meal-label">Süsivesikud</div>
+            <div class="meal-name">Pasta (100g kuivaine) tomatikastmega</div>
+            <div class="meal-macros">~380 kcal · 13g valku · 74g süsivesikuid · 3g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Veggies</div>
-            <div class="meal-name">Side salad with olive oil dressing</div>
-            <div class="meal-macros">~90 kcal · 2g protein · 8g carbs · 6g fat</div>
+            <div class="meal-label">Köögiviljad</div>
+            <div class="meal-name">Väike salat oliiviõlikastmega</div>
+            <div class="meal-macros">~90 kcal · 2g valku · 8g süsivesikuid · 6g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🏋️ Pre-Workout</div>
+        <div class="plan-card-header">🏋️ Enne Treeningut</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">1 hour before</div>
-            <div class="meal-name">Banana + peanut butter (1.5 tbsp)</div>
-            <div class="meal-macros">~260 kcal · 8g protein · 34g carbs · 12g fat</div>
+            <div class="meal-label">1 tund enne</div>
+            <div class="meal-name">Banaan + maapähklivõi (1,5 sl)</div>
+            <div class="meal-macros">~260 kcal · 8g valku · 34g süsivesikuid · 12g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">💪 Post-Workout</div>
+        <div class="plan-card-header">💪 Pärast Treeningut</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Within 30 min</div>
-            <div class="meal-name">Whey protein shake (30g) + fruit</div>
-            <div class="meal-macros">~260 kcal · 30g protein · 30g carbs · 3g fat</div>
+            <div class="meal-label">30 min jooksul</div>
+            <div class="meal-name">Vadakuvalgu shake (30g) + puuvili</div>
+            <div class="meal-macros">~260 kcal · 30g valku · 30g süsivesikuid · 3g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🍽️ Dinner</div>
+        <div class="plan-card-header">🍽️ Õhtusöök</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Protein</div>
-            <div class="meal-name">200g cod fillet or chicken thighs</div>
-            <div class="meal-macros">~340 kcal · 42g protein · 0g carbs · 18g fat</div>
+            <div class="meal-label">Valk</div>
+            <div class="meal-name">200g tursafilee või kanareiefilee</div>
+            <div class="meal-macros">~340 kcal · 42g valku · 0g süsivesikuid · 18g rasva</div>
           </div>
           <div class="meal">
-            <div class="meal-label">Carbs</div>
-            <div class="meal-name">Baked potato + mixed vegetables</div>
-            <div class="meal-macros">~250 kcal · 6g protein · 52g carbs · 1g fat</div>
+            <div class="meal-label">Süsivesikud</div>
+            <div class="meal-name">Küpsetatud kartul + segatud köögiviljad</div>
+            <div class="meal-macros">~250 kcal · 6g valku · 52g süsivesikuid · 1g rasva</div>
           </div>
         </div>
       </div>
 
       <div class="plan-card">
-        <div class="plan-card-header">🌙 Evening Snack</div>
+        <div class="plan-card-header">🌙 Õhtune Suupiste</div>
         <div class="plan-card-body">
           <div class="meal">
-            <div class="meal-label">Optional</div>
-            <div class="meal-name">Handful of nuts + dark chocolate (2 squares)</div>
-            <div class="meal-macros">~220 kcal · 6g protein · 12g carbs · 18g fat</div>
+            <div class="meal-label">Valikuline</div>
+            <div class="meal-name">Peotäis pähkleid + tume šokolaad (2 tükki)</div>
+            <div class="meal-macros">~220 kcal · 6g valku · 12g süsivesikuid · 18g rasva</div>
           </div>
         </div>
       </div>
@@ -548,55 +565,55 @@
     </div>
 
     <ul class="tips-list">
-      <li>Weigh yourself weekly — adjust calories if weight drifts more than 0.5kg/week.</li>
-      <li>Focus on food quality, not just quantity: whole foods, minimal processing.</li>
-      <li>Eat mostly around training — skip big carb meals on rest days if you prefer.</li>
-      <li>Omega-3s from fatty fish or supplements support joint health and recovery.</li>
+      <li>Kaaluge end iganädalaselt — kohandage kaloreid, kui kaal muutub rohkem kui 0,5 kg nädalas.</li>
+      <li>Keskenduge toidu kvaliteedile, mitte ainult kogusele: terved toidud, minimaalne töötlemine.</li>
+      <li>Sööge enamasti treeningu ümber — jätke puhkepäevadel suured süsivesikutega toidukorrad vahele.</li>
+      <li>Omega-3-d rasvalistest kaladest või toidulisanditest toetavad liigeste tervist ja taastumist.</li>
     </ul>
   </div><!-- /maintain -->
 
   <hr class="divider" />
 
-  <!-- ── SUPPLEMENTS ── -->
-  <div class="section-title">Key Supplements</div>
-  <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.9rem;">Food first — these fill gaps, not replace meals.</p>
+  <!-- ── TOIDULISANDID ── -->
+  <div class="section-title">Põhilised Toidulisandid</div>
+  <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.9rem;">Toit on esimene — need täidavad lüngad, mitte ei asenda eineid.</p>
   <div class="supplement-grid">
     <div class="supplement-card">
       <div class="supplement-name">Whey Protein</div>
-      <div class="supplement-why">Fast-absorbing post-workout protein to hit daily targets easily.</div>
-      <div class="supplement-dose">25–40g post-workout</div>
+      <div class="supplement-why">Kiiresti imenduv treeningujärgne valk päevanormide täitmiseks.</div>
+      <div class="supplement-dose">25–40g pärast treeningut</div>
     </div>
     <div class="supplement-card">
       <div class="supplement-name">Creatine Monohydrate</div>
-      <div class="supplement-why">Most research-backed supplement for strength and lean mass gains.</div>
-      <div class="supplement-dose">3–5g daily</div>
+      <div class="supplement-why">Kõige uuringutega tõestatud toidulisand jõu ja lihasmassi kasvuks.</div>
+      <div class="supplement-dose">3–5g päevas</div>
     </div>
     <div class="supplement-card">
       <div class="supplement-name">Vitamin D3 + K2</div>
-      <div class="supplement-why">Critical for testosterone production, bone density, and immunity.</div>
-      <div class="supplement-dose">2000–4000 IU / day</div>
+      <div class="supplement-why">Kriitiliselt tähtis testosterooni tootmiseks, luude tiheduseks ja immuunsuseks.</div>
+      <div class="supplement-dose">2000–4000 IU / päev</div>
     </div>
     <div class="supplement-card">
       <div class="supplement-name">Omega-3 Fish Oil</div>
-      <div class="supplement-why">Reduces inflammation, supports joint health and cardiovascular function.</div>
-      <div class="supplement-dose">2–3g EPA+DHA daily</div>
+      <div class="supplement-why">Vähendab põletikku, toetab liigeste tervist ja kardiovaskulaarset funktsiooni.</div>
+      <div class="supplement-dose">2–3g EPA+DHA päevas</div>
     </div>
     <div class="supplement-card">
       <div class="supplement-name">Magnesium Glycinate</div>
-      <div class="supplement-why">Improves sleep quality and muscle recovery. Many athletes are deficient.</div>
-      <div class="supplement-dose">200–400mg before bed</div>
+      <div class="supplement-why">Parandab une kvaliteeti ja lihaste taastumist. Paljudel sportlastel on puudus.</div>
+      <div class="supplement-dose">200–400mg enne magamaminekut</div>
     </div>
     <div class="supplement-card">
       <div class="supplement-name">Caffeine</div>
-      <div class="supplement-why">Proven ergogenic aid — improves strength, endurance, and focus.</div>
-      <div class="supplement-dose">150–300mg pre-workout</div>
+      <div class="supplement-why">Tõestatud ergogeenne vahend — parandab jõudu, vastupidavust ja fookust.</div>
+      <div class="supplement-dose">150–300mg enne treeningut</div>
     </div>
   </div>
 
 </main>
 
 <footer>
-  <p>IronForge &copy; 2026 — Train hard. Eat right. <span>Stay consistent.</span></p>
+  <p>IronForge &copy; 2026 — Treeni kõvasti. Söö õigesti. <span>Ole järjekindel.</span></p>
 </footer>
 
 <script>
